@@ -1,0 +1,34 @@
+<header class="Direct-messages-top">
+    <ul class="">
+        <li><a href="" ui-sref="home"> <</a></li>
+        <li class="dir-message">私信</li>
+        <li class=""></li>
+    </ul>
+</header>
+
+<div class="tip">
+    <ul>
+        <li class="fl">担心骚扰？试试开启陌生人私信箱子</li>
+        <li class="fr"><a href="">前往设置</a></li>
+
+    </ul>
+</div>
+
+<div class="dir"><p>还没有用户私信</p></div>
+<footer class="foot-menu " ng-controller="footController">
+    <div class="foot-menu-fix clearfix">
+        <ul>
+            <li ng-repeat="foot in footmenu">
+                <a href="" ui-sref="{{foot.link}}">
+                    <i class="{{foot.icon}}" ></i>{{foot.text}}
+                </a>
+            </li>
+            <!--<li><a href="" ui-sref="home"><i class="icon-home-outline" ></i>首页</a></li>-->
+            <!--<li><a href="" ui-sref="find"><i class="icon-eye"></i>发现</a></li>-->
+            <!--<li><a href="" ui-sref="market"><i class="icon-calendar"></i>市场</a></li>-->
+            <!--<li><a href="" ui-sref="message"><i class="icon-bell"></i>通知</a></li>-->
+            <!--<li><a href=""ui-sref="more"><i class="icon-profile"></i>更多</a></li>-->
+            <div ui-view="home-write-son"></div>
+        </ul>
+    </div>
+</footer>

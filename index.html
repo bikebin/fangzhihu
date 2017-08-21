@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"><!--视口 自适应 初始换 不能自调-->
+    <title>仿知乎</title>
+    <link rel="stylesheet/less" href="public/less/index.less"/>
+    <link rel="stylesheet/less" href="public/less/adapter.less"/>
+    <link rel="stylesheet/less" href="public/less/base.less"/>
+    <link rel="stylesheet/less" href="public/less/font.less"/>
+    <link rel="stylesheet/less" href="public/less/home.less"/>
+  
+    <!--<link src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">-->
+</head>
+<body ng-app="zhihu" >
+    <div ng-controller="footController">
+    <div ng-repeat="foot in footmenu" ui-view="{{foot.link}}"></div>
+    <!--<div ui-view="find"></div>-->
+    <!--<div ui-view="market"></div>-->
+    <!--<div ui-view="message"></div>-->
+    <!--<div ui-view="more"></div>-->
+    </div>
+    <div ui-view="home-write"></div>
+
+    <div loading class="loading" ng-hide="loaded" src="loading.gif"></div>
+               
+    <!-- 底部 -->
+<footer class="foot-menu" ng-controller="footController" >
+    <div class="foot-menu-fix clearfix">
+        <ul>
+            <li ng-repeat="foot in footmenu">
+                <a href="" ui-sref="{{foot.link}}">
+                    <i class="{{foot.icon}}" ng-cloak></i>{{foot.text}}
+                </a>
+            </li>
+            <!--<li><a href="" ui-sref="find"><i class="icon-eye"></i>发现</a></li>-->
+            <!--<li><a href="" ui-sref="market"><i class="icon-calendar"></i>市场</a></li>-->
+            <!--<li><a href="" ui-sref="message"><i class="icon-bell"></i>通知</a></li>-->
+            <!--<li><a href=""ui-sref="more"><i class="icon-profile"></i>更多</a></li>-->
+            <!--<div ui-view="homeson"></div>-->
+        </ul>
+    </div>
+</footer>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="script/less.js"></script>
+    <script src="script/app.js"></script>
+    <!-- <script src="script/shishi.js"></script> -->
+    <script src="script/jquery-1.11.1.min.js"></script>
+    <script src="script/Controller.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+</body>
+</html>

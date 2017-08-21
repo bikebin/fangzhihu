@@ -1,0 +1,75 @@
+<div ng-controller="findController">
+<header class=" header clearfix">
+	<div class="top-header ">
+		<input type="text" placeholder="搜索知乎内容"/><i class="icon-search"></i><i class="icon-bubble"></i>
+	</div>
+</header>
+<!-- 顶部的 轮播图 -->
+<!-- <div class="zhihu-pictures"  >
+
+	<div class="pictures">
+		<ul class="pic">
+			<li><a href="#"><img src="public/images/2015042202.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/01.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/2015042202.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/01.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/04.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/2015042202.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/2015042202.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/2015042202.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/2015042202.jpg" alt=""></a></li>
+			<li><a href="#"><img src="public/images/2015042202.jpg" alt=""></a></li>
+		</ul>
+
+	</div>
+</div> -->
+
+<div class="literature">
+	<!-- 日期分类 -->
+
+	<ul class="posts large">
+		<!-- 文章 -->
+		<li ng-repeat="post in data['posts']">
+			<span href="javascript:;" class="tag" ng-if="post.column.name">{{post.column.name}}</span>
+			<div class="cont">
+				<h3>{{post.title}}</h3>
+				<div class="brief">
+					<!-- 10001 -->
+					<!-- 10002 -->
+					<!-- only是一个类名，只有=10001时才显示整行的p -->
+					<p ng-class="{only: post.display_style == 10001}" ng-if="post.display_style != 10003">{{post.abstract}}</p>
+					<!-- 10002 -->
+					<div class="thumb" ng-if="post.display_style == 10002">
+						<img ng-src="{{post.thumbs[0].small.url}}" alt="">
+					</div>
+					<!-- 10003 -->
+					<div class="gallery" ng-if="post.display_style == 10003">
+						<img ng-src="{{post.thumbs[0].small.url}}" alt="">
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<!---->
+
+<!-- 主体部分 -->
+
+<!-- <footer class="foot-menu " ng-controller="footController">
+	<div class="foot-menu-fix clearfix">
+		<ul>
+			<li ng-repeat="foot in footmenu">
+				<a href="" ui-sref="{{foot.link}}">
+					<i class="{{foot.icon}}" ></i>{{foot.text}}
+				</a>
+			</li> -->
+			<!--<li><a href="" ui-sref="home"><i class="icon-home-outline" ></i>首页</a></li>-->
+			<!--<li><a href="" ui-sref="find"><i class="icon-eye"></i>发现</a></li>-->
+			<!--<li><a href="" ui-sref="market"><i class="icon-calendar"></i>市场</a></li>-->
+			<!--<li><a href="" ui-sref="message"><i class="icon-bell"></i>通知</a></li>-->
+			<!--<li><a href=""ui-sref="more"><i class="icon-profile"></i>更多</a></li>-->
+<!-- 			<div ui-view="findson"></div>
+		</ul>
+	</div>
+</footer> -->
+</div>
